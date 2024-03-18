@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Call API
-        let params: [String: Any] = ["UserName": "100031", "Password": "T3st-Acc0unt"]
+        let params: [String: Any] = ["soap parameter 1": "Hello", "soap parameter 2": "world"]
         loginAPI(params: params) { response, error in
             if let response = response {
                 print("Response: \(response)")
@@ -31,18 +31,15 @@ class ViewController: UIViewController {
             <?xml version="1.0" encoding="utf-8" standalone="no"?>
             <soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 <soap:Body>
-                    <Login xmlns="http://www.securepay.net/">
-                        <loginRequest>
-                            <UserName>100031</UserName>
-                            <Password>T3st-Acc0unt</Password>
-                        </loginRequest>
-                    </Login>
+                    
+                    <!-- Add your request parameters here -->
+            
                 </soap:Body>
             </soap:Envelope>
             """
         
         // Specify the endpoint URL for the SOAP service
-        guard let endpointURL = URL(string: "https://apidev.securepay.net/TransactionService.asmx?op=Login") else {
+        guard let endpointURL = URL(string: "https://your-soap-service.com/YourService.asmx") else {
             print("Invalid endpoint URL")
             return
         }
