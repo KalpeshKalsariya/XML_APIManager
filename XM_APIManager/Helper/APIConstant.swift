@@ -9,11 +9,6 @@ import Foundation
 
 import UIKit
 
-struct APIConstants {
-    static let baseURL = "" // put your base url
-    static let getCustomersEndpoint = "" // put your API end point
-}
-
 struct ConstantMessage {
     static let badRequest = "Bad Request: The server could not understand the request."
     static let unauthorized = "Unauthorized: Authentication is required to access this resource."
